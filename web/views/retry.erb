@@ -12,7 +12,11 @@
       </tr>
       <tr>
         <th><%= t('ErrorMessage') %></th>
-        <td><%= h(@retry['error_message']) %></td>
+        <td>
+          <% @retry['error_message'].lines.each do |line| %>
+            <%= h(line) %><br />
+          <% end %>
+        </td>
       </tr>
       <% if @retry.error_backtrace %>
         <tr>
